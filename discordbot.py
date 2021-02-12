@@ -41,6 +41,13 @@ async def on_message(message):
         await message.guild.voice_client.disconnect()
 
         await message.channel.send("切断しました。")
+ elif message.content == "sy!help":
+        embed = discord.Embed(title="使い方・ヘルプ", description="作成:よっキング#8329")
+        embed.add_field(name="sy!help",value="へるぷ!")
+        embed.add_field(name="sy!join",value="あなたが入ってるボイスチャンネルに入ります")
+        embed.add_field(name="sy!kick", value="ボイスチャンネルからでます")
+        #embed.add_field(name="!clch", value="チャンネルを削除")
+        embed.add_field(name="詳しくはこちら!",value="https://qiita.com/yokingkun/items/8817905de232f8081fea")
  else:
      if message.author.bot:
         return
