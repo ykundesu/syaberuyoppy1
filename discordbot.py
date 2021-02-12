@@ -10,7 +10,7 @@ client = discord.Client(intents=Intents)
 async def change_activity():
     # 「○○をプレイ中」の内容を変更します
     await client.change_presence(
-        activity=discord.Game(name=f'sd!helpで使い方/作成:よっキング#8329|{len(client.guilds)}サーバーで導入されています'))
+        activity=discord.Game(name=f'np!helpで使い方/作成:よっキング#8329|{len(client.guilds)}サーバーで導入されています'))
 @change_activity.before_loop
 async def before_change_activity():
     # botがログインするまで(on_readyが発火するまで）待機します
@@ -19,7 +19,7 @@ async def before_change_activity():
 change_activity.start()
 @client.event
 async def on_message(message):
- if message.content == "!join":
+ if message.content == "np!join":
     if message.author.voice is None:
         await message.channel.send("あなたはボイスチャンネルに接続していません。")
         return
@@ -32,7 +32,7 @@ async def on_message(message):
     output = gTTS(text="やっほー！。。喋るよっぴーだよ!よろしくねー!",lang="ja", slow=False)
     output.save("しゃべるよっぴー.mp3")
     message.guild.voice_client.play(discord.FFmpegPCMAudio("しゃべるよっぴー.mp3"))
- elif message.content == "!kick":
+ elif message.content == "np!kick":
         if message.guild.voice_client is None:
             await message.channel.send("接続していません。")
             return
