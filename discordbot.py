@@ -48,6 +48,7 @@ async def on_message(message):
         embed.add_field(name="sy!kick", value="ボイスチャンネルからでます")
         #embed.add_field(name="!clch", value="チャンネルを削除")
         embed.add_field(name="詳しくはこちら!",value="https://qiita.com/yokingkun/items/8817905de232f8081fea")
+        await message.channel.send(embed=embed)
  else:
      if message.author.bot:
         return
