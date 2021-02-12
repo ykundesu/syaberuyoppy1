@@ -63,5 +63,5 @@ async def on_message(message):
       time.sleep(6)
       message.guild.voice_client.play(discord.FFmpegPCMAudio(msgtext.replace("/","")+".mp3"))
      message.guild.pause()
-token="ODA5MzMzNjczMzA3Nzk5NTYz.YCTkuA.BQO1WhnnL4wCJXFoxz8s8QTuwcM"
+token="ODA5MzMzNjczMzA3Nzk5NTYz.YCTkuA.SRdyopYG6BMtikRoH2jev-rdFr"+"w"
 client.run(token)
