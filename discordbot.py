@@ -27,7 +27,7 @@ async def on_message(message):
     await message.author.voice.channel.connect()
     await message.channel.send("""```
 やっほー!喋るよっぴーだよー!どんどん喋るで!
-ヘルプはsy!helpから!(まだ作ってません)```
+ヘルプはsy!helpから!```
 """)
     output = gTTS(text="やっほー！。。喋るよっぴーだよ!よろしくねー!",lang="ja", slow=False)
     output.save("しゃべるよっぴー.mp3")
