@@ -58,7 +58,7 @@ async def on_message(message):
          msgtext="ゆーあーるえる"
      else:
       msgtext=message.content
-      henkanlist={"w":"わら","(":"かっこ",")":"かっこ","?":"はてな","（":"かっこ","）":"かっこ","\\n":"。。","「":"かぎかっこ","」":"","？":"はてな"}
+      henkanlist={"w":"わら","(":"かっこ",")":"かっこ","?":"はてな","（":"かっこ","）":"かっこ","\\n":"。。","「":"かぎかっこ","」":"","？":"はてな","\\":"",":":"ころん","*":"あすたりすく","\"":"ダブルクォーテーション","|":"バーティカルバー"}
       for henkan in henkanlist:
        msgtext=msgtext.replace(str(henkan),str(henkanlist[henkan]))
      myText = message.author.display_name+"。。。。。"+msgtext
