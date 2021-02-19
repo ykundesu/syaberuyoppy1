@@ -65,7 +65,7 @@ async def on_message(message):
              userdate1=await client.fetch_user(int(mentiondate[2:-1]))
          msgtext=msgtext.replace(mentiondate1,"あっと"+userdate1.name+"。。")
       for mentiondate2 in re.findall("<@&\d{18}>",msgtext):
-         roledate1 = message.guild.get_role(int(mentiondate2[3:-1])
+         roledate1 = message.guild.get_role(int(mentiondate2[3:-1]))
          msgtext=msgtext.replace(mentiondate2,"あっと"+roledate1.name+"。。")
       for mentiondate in re.findall("<@!\d{18}>",msgtext):
          userdate = message.guild.get_member(int(mentiondate[3:-1]))
