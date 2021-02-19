@@ -68,14 +68,17 @@ async def on_message(message):
       for henkan in henkanlist:
        msgtext=msgtext.replace(str(henkan),str(henkanlist[henkan]))
      myText = message.author.display_name+"。。。。。"+msgtext
+     filename=myText
+     if filename>10:
+            filename=filename[:10]
      language ='ja'
      output = gTTS(text=myText, lang=language, slow=False)
-     output.save(msgtext.replace("/","")+".mp3")
+     output.save(filename.replace("/","")+".mp3")
      try:
-      message.guild.voice_client.play(discord.FFmpegPCMAudio(msgtext.replace("/","")+".mp3"))
+      message.guild.voice_client.play(discord.FFmpegPCMAudio(filename.replace("/","")+".mp3"))
      except:
       time.sleep(6)
-      message.guild.voice_client.play(discord.FFmpegPCMAudio(msgtext.replace("/","")+".mp3"))
+      message.guild.voice_client.play(discord.FFmpegPCMAudio(filename.replace("/","")+".mp3"))
      message.guild.pause()
 token="ODA5MzMzNjczMzA3Nzk5NTYz.YCTkuA.SRdyopYG6BMtikRoH2jev-rdFr"+"w"
 client.run(token)
