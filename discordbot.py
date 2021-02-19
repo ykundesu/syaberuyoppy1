@@ -2,6 +2,7 @@ import discord
 from gtts import gTTS
 from discord.ext import commands,tasks
 import time
+import re
 #from urllib.parse import 
 Intents = discord.Intents.default()
 Intents.members = True
