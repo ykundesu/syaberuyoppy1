@@ -69,7 +69,7 @@ async def on_message(message):
        msgtext=msgtext.replace(str(henkan),str(henkanlist[henkan]))
      myText = message.author.display_name+"。。。。。"+msgtext
      filename=myText
-     if filename>10:
+     if len(filename)>10:
             filename=filename[:10]
      language ='ja'
      output = gTTS(text=myText, lang=language, slow=False)
