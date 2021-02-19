@@ -58,6 +58,9 @@ async def on_message(message):
          msgtext="ゆーあーるえる"
      else:
       msgtext=message.content
+      for mentiondate in re.findall("<@!\d{18}>",msgtext):
+         userdate = await client.fetch_user(mentiondate[3:-1])
+         msgtext=msgtext.replace(mentiondate,"あっと"+userdate.name+"。。")
       henkanlist={"w":"わら","(":"かっこ",")":"かっこ","?":"はてな","（":"かっこ","）":"かっこ","\\n":"。。","「":"かぎかっこ","」":"","？":"はてな","\\":"",":":"ころん","*":"あすたりすく","\"":"ダブルクォーテーション","|":"バーティカルバー"}
       for henkan in henkanlist:
        msgtext=msgtext.replace(str(henkan),str(henkanlist[henkan]))
