@@ -60,7 +60,9 @@ async def on_message(message):
      else:
       msgtext=message.content
       for mentiondate in re.findall("<@!\d{18}>",msgtext):
-         userdate = await client.fetch_user(mentiondate[3:-1])
+         userdate = message.guild.get_member(int(mentiondate[3:-1]))
+         if userdate==None:
+             userdate=await client.fetch_user(int(mentiondate[3:-1]))
          msgtext=msgtext.replace(mentiondate,"あっと"+userdate.name+"。。")
       henkanlist={"w":"わら","(":"かっこ",")":"かっこ","?":"はてな","（":"かっこ","）":"かっこ","\\n":"。。","「":"かぎかっこ","」":"","？":"はてな","\\":"",":":"ころん","*":"あすたりすく","\"":"ダブルクォーテーション","|":"バーティカルバー"}
       for henkan in henkanlist:
